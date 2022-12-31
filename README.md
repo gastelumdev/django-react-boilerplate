@@ -126,3 +126,9 @@ ReactDOM.render(<App />, document.getElementById('app'));
     - Bootswatch is used in this project along with the Bootstrap 4 JS cdn links
 - Install redux: `npm i redux react-redux redux-thunk redux-devtools-extension`
 - Install axios: `npm i axios`
+
+### Redux Workflow
+- Create type
+- Create action
+- Add a case to the reducer that returns the state
+- Call the action within a component
