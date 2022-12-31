@@ -124,3 +124,4 @@ ReactDOM.render(<App />, document.getElementById('app'));
 <script src="{% static "frontend/main.js" %}"></script>
 ```
     - Bootswatch is used in this project along with the Bootstrap 4 JS cdn links
+- Install redux: `npm i redux react-redux redux-thunk redux-devtools-extension`
