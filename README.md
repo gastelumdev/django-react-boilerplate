@@ -125,3 +125,4 @@ ReactDOM.render(<App />, document.getElementById('app'));
 ```
     - Bootswatch is used in this project along with the Bootstrap 4 JS cdn links
 - Install redux: `npm i redux react-redux redux-thunk redux-devtools-extension`
+- Install axios: `npm i axios`
