@@ -127,9 +127,13 @@ ReactDOM.render(<App />, document.getElementById('app'));
 - Install redux: `npm i redux react-redux redux-thunk redux-devtools-extension`
 - Install axios: `npm i axios`
 - Install alerts: `npm i react-alert react-alert-template-basic react-transition-group`
+- Install react router: `npm i react-router-dom`
 
 ### Redux Workflow
 - Create type
 - Create action
 - Add a case to the reducer that returns the state
 - Call the action within a component
+
+#### Create messages
+-
