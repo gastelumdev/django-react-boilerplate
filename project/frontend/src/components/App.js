@@ -6,11 +6,12 @@ import Dashboard from './leads/Dashboard';
 import Alerts from './layout/Alerts';
 import Login from './accounts/login';
 import Register from './accounts/register';
-import PrivateRoute from './common/PrivateRoute';
+import { PrivateRoutes } from './common/PrivateRoutes';
 import { Provider } from 'react-redux';
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import store from '../store';
+import { loadUser } from '../actions/auth';
 
 const alertOptions = {
     timeout: 3000,
@@ -18,6 +19,11 @@ const alertOptions = {
 }
 
 class App extends Component {
+    componentDidMount() {
+        console.log(loadUser());
+        store.dispatch(loadUser());
+    }
+
     render() {
         return (
             <Provider store={store}>
@@ -28,11 +34,11 @@ class App extends Component {
                             <Alerts />
                             <div className='container'>
                                 <Routes>
-                                    <Fragment>
-                                        <Route exact path="/" element={<PrivateRoute exact path="/" component={Dashboard} />} />
-                                        <Route exact path="/register" element={<Register />} />
-                                        <Route exact path="/login" element={<Login />} />
-                                    </Fragment>
+                                    <Route element={<PrivateRoutes />}>
+                                        <Route exact path="/" element={<Dashboard />} />
+                                    </Route>
+                                    <Route exact path="/register" element={<Register />} />
+                                    <Route exact path="/login" element={<Login />} />
                                 </Routes>
                             </div>
                         </Fragment>
