@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Routes, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
 import Alerts from './layout/Alerts';
@@ -11,7 +11,6 @@ import { Provider } from 'react-redux';
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import store from '../store';
-import { loadUser } from '../actions/auth';
 
 const alertOptions = {
     timeout: 3000,
@@ -19,10 +18,6 @@ const alertOptions = {
 }
 
 class App extends Component {
-    componentDidMount() {
-        // store.dispatch(loadUser());
-    }
-
     render() {
         return (
             <Provider store={store}>
