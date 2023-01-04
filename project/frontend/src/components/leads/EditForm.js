@@ -1,27 +1,34 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addLead } from '../../actions/leads';
+import { addLead, editLead, getLead } from '../../actions/leads';
 import Accordion from '../common/Accordion';
 
-export class Form extends Component {
+export class EditForm extends Component {
     state = {
-        name: '',
-        email: '',
-        message: ''
+        id: this.props.lead.id,
+        name: this.props.lead.name,
+        email: this.props.lead.email,
+        message: this.props.lead.message
     }
 
     static propTypes = {
-        addLead: PropTypes.func.isRequired
+        addLead: PropTypes.func.isRequired,
+        editLead: PropTypes.func.isRequired,
+        getLead: PropTypes.func.isRequired
+    }
+
+    componentDidMount() {
+        this.props.getLead();
     }
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, email, message } = this.state;
-        const lead = { name, email, message };
-        this.props.addLead(lead);
+        const { id, name, email, message } = this.state;
+        const lead = { id, name, email, message };
+        this.props.editLead(lead);
 
         this.setState({
             name: '',
@@ -35,8 +42,8 @@ export class Form extends Component {
         const { name, email, message } = this.state;
 
         return (
-            <Accordion title="Add Lead" show="">
-                <h2>Add Lead</h2>
+            <Accordion title="Edit Lead" show="show">
+                <h2>Edit Lead</h2>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Name</label>
@@ -84,4 +91,4 @@ const mapStateToProps = (state) => ({
     edit: state.leads.edit
 });
 
-export default connect(mapStateToProps, { addLead })(Form);
+export default connect(mapStateToProps, { addLead, editLead, getLead })(EditForm);

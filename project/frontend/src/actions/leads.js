@@ -2,7 +2,7 @@ import axios from "axios";
 import { createMessage, returnErrors } from './messages';
 import { tokenConfig } from "./auth";
 
-import { GET_LEADS, DELETE_LEAD, ADD_LEAD, GET_ERRORS } from "./types";
+import { GET_LEADS, DELETE_LEAD, ADD_LEAD, EDIT_LEAD, GET_LEAD } from "./types";
 
 export const getLeads = () => (dispatch, getState) => {
     axios.get('/api/leads/', tokenConfig(getState))
@@ -39,4 +39,26 @@ export const addLead = (lead) => (dispatch, getState) => {
             });
         })
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
+};
+
+export const editLead = (lead) => (dispatch, getState) => {
+    const { id, name, email, message } = lead;
+    axios
+        .put(`/api/leads/${id}/`, { name, email, message }, tokenConfig(getState))
+        .then((res) => {
+            dispatch(createMessage({ editLead: "Lead updated" }));
+            dispatch({
+                type: EDIT_LEAD,
+                payload: res.data
+            });
+
+        })
+        .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
+};
+
+export const getLead = (lead) => (dispatch, getState) => {
+    dispatch({
+        type: GET_LEAD,
+        payload: lead
+    });
 };

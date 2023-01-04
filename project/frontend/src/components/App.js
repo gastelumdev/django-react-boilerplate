@@ -12,12 +12,18 @@ import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 import store from '../store';
 
+import { loadUser } from '../actions/auth';
+
 const alertOptions = {
     timeout: 3000,
     position: 'top center'
 }
 
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser());
+    }
+
     render() {
         return (
             <Provider store={store}>
