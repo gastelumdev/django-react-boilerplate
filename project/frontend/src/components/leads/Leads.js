@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import EditableTableRow from '../common/EditableTableRow';
 import PropTypes from 'prop-types';
 import { getLeads, deleteLead, getLead } from '../../actions/leads';
 
@@ -19,7 +20,7 @@ export class Leads extends Component {
         return (
             <Fragment>
                 <h2>Leads</h2>
-                <table className="table table-striped">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -31,26 +32,7 @@ export class Leads extends Component {
                     </thead>
                     <tbody>
                         {this.props.leads.map((lead) => (
-                            <tr key={lead.id}>
-                                <td>{lead.id}</td>
-                                <td>{lead.name}</td>
-                                <td>{lead.email}</td>
-                                <td>{lead.message}</td>
-                                <td>
-                                    <button
-                                        onClick={this.props.getLead.bind(this, lead)}
-                                        className="btn btn-primary btn-sm mr-1"
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        onClick={this.props.deleteLead.bind(this, lead.id)}
-                                        className="btn btn-danger btn-sm"
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
+                            <EditableTableRow key={lead.id} this={this} data={lead} handlers={{ getLead: this.props.getLead, deleteLead: this.props.deleteLead }} />
                         ))}
                     </tbody>
                 </table>
