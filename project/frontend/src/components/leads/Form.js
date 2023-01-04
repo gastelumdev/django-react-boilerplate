@@ -26,7 +26,7 @@ export class Form extends Component {
         this.setState({
             name: '',
             email: '',
-            message: '',
+            message: ''
         });
     };
 
@@ -35,7 +35,7 @@ export class Form extends Component {
         const { name, email, message } = this.state;
 
         return (
-            <Accordion title="Add Lead" show="">
+            <Accordion title="Add Lead" show={this.props.showForm ? 'show' : ''}>
                 <h2>Add Lead</h2>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
@@ -81,7 +81,8 @@ export class Form extends Component {
 
 const mapStateToProps = (state) => ({
     lead: state.leads.lead,
-    edit: state.leads.edit
+    edit: state.leads.edit,
+    showForm: state.leads.showForm
 });
 
 export default connect(mapStateToProps, { addLead })(Form);

@@ -3,7 +3,8 @@ import { DELETE_LEAD, GET_LEADS, ADD_LEAD, EDIT_LEAD, GET_LEAD } from '../action
 const initialState = {
     leads: [],
     lead: null,
-    edit: false
+    edit: false,
+    showForm: true
 }
 
 export default function (state = initialState, action) {
@@ -24,7 +25,8 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 leads: [...state.leads, action.payload],
-                edit: false
+                edit: false,
+                showForm: false
             };
         case EDIT_LEAD:
             const index = state.leads.findIndex(lead => {
@@ -45,6 +47,7 @@ export default function (state = initialState, action) {
                 lead: action.payload,
                 edit: true
             }
+
         default:
             return state;
     }

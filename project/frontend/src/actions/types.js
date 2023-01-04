@@ -3,6 +3,7 @@ export const DELETE_LEAD = 'DELETE_LEAD';
 export const ADD_LEAD = 'ADD_LEAD';
 export const EDIT_LEAD = 'EDIT_LEAD';
 export const GET_LEAD = 'GET_LEAD';
+export const SHOW_LEAD_FORM = 'SHOW_LEAD_FORM';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CREATE_MESSAGE = "CREATE_MESSAGE";
 export const USER_LOADING = 'USER_LOADING';
