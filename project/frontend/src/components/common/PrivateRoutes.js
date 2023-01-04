@@ -7,9 +7,9 @@ export const PrivateRoutes = () => {
     const auth = useSelector(state => state.auth);
     if (auth.isLoading) {
         return <h2>Loading...</h2>
+    } else if (!auth.isAuthenticated) {
+        <Navigate to='/login' />
+    } else {
+        return <Outlet />;
     }
-
-    return (
-        auth.isAuthenticated ? <Outlet /> : <Navigate to='/login' />
-    )
 }
