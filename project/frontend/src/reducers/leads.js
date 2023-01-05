@@ -4,7 +4,7 @@ const initialState = {
     leads: [],
     lead: null,
     edit: false,
-    showForm: true
+    editId: null
 }
 
 export default function (state = initialState, action) {
@@ -25,8 +25,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 leads: [...state.leads, action.payload],
-                edit: false,
-                showForm: false
+                edit: false
             };
         case EDIT_LEAD:
             const index = state.leads.findIndex(lead => {
@@ -45,7 +44,8 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 lead: action.payload,
-                edit: true
+                edit: true,
+                editId: action.payload
             }
 
         default:
