@@ -5,11 +5,12 @@ import PropTypes from 'prop-types';
 
 export const PrivateRoutes = () => {
     const auth = useSelector(state => state.auth);
+    console.log(auth);
     if (auth.isLoading) {
         return <h2>Loading...</h2>
-    } else if (!auth.isAuthenticated) {
-        <Navigate to='/login' />
-    } else {
+    } else if (auth.isAuthenticated) {
         return <Outlet />;
+    } else {
+        return <Navigate to='/login/' />;
     }
 }

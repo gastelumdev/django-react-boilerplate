@@ -56,9 +56,10 @@ export const editLead = (lead) => (dispatch, getState) => {
         .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
 };
 
-export const getLead = (lead) => (dispatch, getState) => {
+export const getLead = (id) => (dispatch, getState) => {
+    console.log(id);
     dispatch({
         type: GET_LEAD,
-        payload: lead
+        payload: id
     });
 };
