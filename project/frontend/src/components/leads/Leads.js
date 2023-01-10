@@ -112,7 +112,7 @@ export class Leads extends Component {
                                         <td>
                                             <button
                                                 onClick={this.showForm.bind(this, lead)}
-                                                className="btn btn-primary btn-sm mr-1"
+                                                className="btn btn-primary btn-sm me-2"
                                             >
                                                 Edit
                                             </button>

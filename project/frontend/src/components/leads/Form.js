@@ -38,8 +38,8 @@ export class Form extends Component {
             <Accordion title="Add Lead" show={this.props.showForm ? 'show' : ''}>
                 <h2>Add Lead</h2>
                 <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Name</label>
+                    <div className="mb-3">
+                        <label className="form-label">Name</label>
                         <input
                             className="form-control"
                             type="text"
@@ -48,8 +48,8 @@ export class Form extends Component {
                             value={name}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Email</label>
+                    <div className="mb-3">
+                        <label className="form-label">Email</label>
                         <input
                             className="form-control"
                             type="email"
@@ -58,8 +58,8 @@ export class Form extends Component {
                             value={email}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Message</label>
+                    <div className="mb-3">
+                        <label className="form-label">Message</label>
                         <textarea
                             className="form-control"
                             type="text"
@@ -68,7 +68,7 @@ export class Form extends Component {
                             value={message}
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="mb-3">
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
