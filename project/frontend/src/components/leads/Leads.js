@@ -91,7 +91,7 @@ export class Leads extends Component {
                                         <td>
                                             <button
                                                 onClick={this.save.bind(this)}
-                                                className="btn btn-primary btn-sm mr-1"
+                                                className="btn btn-primary btn-sm me-2"
                                             >
                                                 Save
                                             </button>
