@@ -30,17 +30,14 @@ class App extends Component {
                 <AlertProvider template={AlertTemplate} {...alertOptions}>
                     <Router>
                         <Fragment>
-                            <Header />
                             <Alerts />
-                            <div className='container'>
-                                <Routes>
-                                    <Route element={<PrivateRoutes />}>
-                                        <Route exact path="/" element={<Dashboard />} />
-                                    </Route>
-                                    <Route exact path="/register" element={<Register />} />
-                                    <Route exact path="/login" element={<Login />} />
-                                </Routes>
-                            </div>
+                            <Routes>
+                                <Route element={<PrivateRoutes />}>
+                                    <Route exact path="/" element={<Dashboard />} />
+                                </Route>
+                                <Route exact path="/register" element={<Register />} />
+                                <Route exact path="/login" element={<Login />} />
+                            </Routes>
                         </Fragment>
                     </Router>
                 </AlertProvider>

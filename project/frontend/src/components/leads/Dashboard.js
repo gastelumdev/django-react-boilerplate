@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import Header from '../layout/Header';
 import Form from './Form';
 import EditForm from './EditForm';
 import Leads from './Leads';
@@ -10,8 +11,10 @@ export class Dashboard extends Component {
     render() {
         return (
             <Fragment>
-                {this.props.edit ? <EditForm /> : <Form />}
-                <Leads />
+                <Header>
+                    {this.props.edit ? <EditForm /> : <Form />}
+                    <Leads />
+                </Header>
             </Fragment>
         )
     }
