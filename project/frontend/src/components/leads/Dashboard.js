@@ -11,7 +11,7 @@ export class Dashboard extends Component {
     render() {
         return (
             <Fragment>
-                <Header>
+                <Header page="leads">
                     {this.props.edit ? <EditForm /> : <Form />}
                     <Leads />
                 </Header>

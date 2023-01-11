@@ -5,7 +5,7 @@ import Users from './Users';
 export class UsersDashboard extends Component {
     render() {
         return (
-            <Header>
+            <Header page='users'>
                 <Users />
             </Header>
         )

@@ -26,32 +26,6 @@ export class Header extends Component {
     render() {
         const { isAuthenticated, user } = this.props.auth;
 
-        const guestLinks = (
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li className="nav-item">
-                    <Link to="/register" className="nav-link">
-                        Register
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/login" className="nav-link">
-                        Login
-                    </Link>
-                </li>
-            </ul>
-        );
-
-        const authLinks = (
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                <span className="navbar-text mr-3">
-                    <strong>{user ? `Welcome ${user.username}` : ''}</strong>
-                </span>
-                <li className="nav-item">
-                    <button onClick={this.props.logout} className="nav-link btn btn-info btn-sm text-light">Logout</button>
-                </li>
-            </ul>
-        );
-
         return (
             <div className="wrapper">
                 <nav id="sidebar" className={`sidebar js-sidebar ${this.state.collapsed ? 'collapsed' : ''}`}>
@@ -65,13 +39,13 @@ export class Header extends Component {
                                 Dashboard
                             </li>
 
-                            <li className="sidebar-item active">
-                                <a className="sidebar-link" href="/">
+                            <li className={`sidebar-item ${this.props.page == 'leads' ? 'active' : ''}`}>
+                                <a className="sidebar-link" href="/#">
                                     <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Leads</span>
                                 </a>
                             </li>
 
-                            <li className="sidebar-item">
+                            <li className={`sidebar-item ${this.props.page == 'users' ? 'active' : ''}`}>
                                 <a className="sidebar-link" href="/#/users">
                                     <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Users</span>
                                 </a>
