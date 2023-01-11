@@ -72,8 +72,8 @@ export class Header extends Component {
                             </li>
 
                             <li className="sidebar-item">
-                                <a className="sidebar-link" href="/events">
-                                    <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Events</span>
+                                <a className="sidebar-link" href="/#/users">
+                                    <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Users</span>
                                 </a>
                             </li>
                         </ul>

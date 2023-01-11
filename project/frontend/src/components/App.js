@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
+import { UsersDashboard } from './users/UsersDashboard';
 import Alerts from './layout/Alerts';
 import Login from './accounts/login';
 import Register from './accounts/register';
@@ -35,6 +36,7 @@ class App extends Component {
                                 <Route element={<PrivateRoutes />}>
                                     <Route exact path="/" element={<Dashboard />} />
                                     <Route exact path="/leads" element={<Dashboard />} />
+                                    <Route exact path="/users" element={<UsersDashboard />} />
                                 </Route>
                                 <Route exact path="/register" element={<Register />} />
                                 <Route exact path="/login" element={<Login />} />
