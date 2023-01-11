@@ -34,6 +34,7 @@ class App extends Component {
                             <Routes>
                                 <Route element={<PrivateRoutes />}>
                                     <Route exact path="/" element={<Dashboard />} />
+                                    <Route exact path="/leads" element={<Dashboard />} />
                                 </Route>
                                 <Route exact path="/register" element={<Register />} />
                                 <Route exact path="/login" element={<Login />} />

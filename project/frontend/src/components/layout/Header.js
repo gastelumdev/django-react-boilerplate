@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
-import { MessageSquare, Bell } from 'react-feather';
+import { MessageSquare, Bell, Settings } from 'react-feather';
 
 export class Header extends Component {
     constructor(props) {
@@ -56,18 +56,24 @@ export class Header extends Component {
             <div className="wrapper">
                 <nav id="sidebar" className={`sidebar js-sidebar ${this.state.collapsed ? 'collapsed' : ''}`}>
                     <div className="sidebar-content js-simplebar">
-                        <a className="sidebar-brand" href="index.html">
-                            <span className="align-middle">AdminKit</span>
+                        <a className="sidebar-brand" href="/#/login">
+                            <span className="align-middle">Boiler</span>
                         </a>
 
                         <ul className="sidebar-nav">
                             <li className="sidebar-header">
-                                Pages
+                                Dashboard
                             </li>
 
                             <li className="sidebar-item active">
-                                <a className="sidebar-link" href="index.html">
-                                    <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Dashboard</span>
+                                <a className="sidebar-link" href="/">
+                                    <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Leads</span>
+                                </a>
+                            </li>
+
+                            <li className="sidebar-item">
+                                <a className="sidebar-link" href="/events">
+                                    <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Events</span>
                                 </a>
                             </li>
                         </ul>
@@ -216,7 +222,7 @@ export class Header extends Component {
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                                        <i className="align-middle" data-feather="settings"></i>
+                                        <Settings />
                                     </a>
 
                                     <a className="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">

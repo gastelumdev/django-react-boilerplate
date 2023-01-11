@@ -69,64 +69,66 @@ export class Leads extends Component {
                     <div className="card-header">
                         <h5 className="card-title mb-0">Latest Projects</h5>
                     </div>
-                    <table className="table table-hover my-0">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Message</th>
-                                <th />
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.props.leads.map((lead) => (
-                                (this.state.form && this.state.id === lead.id) ?
+                    <div className="table-responsive">
+                        <table className="table table-hover my-0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                    <th />
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.props.leads.map((lead) => (
+                                    (this.state.form && this.state.id === lead.id) ?
 
-                                    <tr key={this.state.id}>
-                                        <td>{this.state.id}</td>
-                                        <td><input value={this.state.name} name="name" onChange={this.onChange} /></td>
-                                        <td><input value={this.state.email} name="email" onChange={this.onChange} /></td>
-                                        <td><input value={this.state.message} name="message" onChange={this.onChange} /></td>
-                                        <td>
-                                            <button
-                                                onClick={this.save.bind(this)}
-                                                className="btn btn-primary btn-sm me-2"
-                                            >
-                                                Save
-                                            </button>
-                                            <button
-                                                onClick={this.hideForm.bind(this, lead)}
-                                                className="btn btn-danger btn-sm"
-                                            >
-                                                X
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    :
-                                    <tr key={lead.id}>
-                                        <td>{lead.id}</td>
-                                        <td>{lead.name}</td>
-                                        <td>{lead.email}</td>
-                                        <td>{lead.message}</td>
-                                        <td>
-                                            <button
-                                                onClick={this.showForm.bind(this, lead)}
-                                                className="btn btn-primary btn-sm me-2"
-                                            >
-                                                Edit
-                                            </button>
-                                            <button
-                                                onClick={this.props.deleteLead.bind(this, lead.id)}
-                                                className="btn btn-danger btn-sm"
-                                            >
-                                                Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                                        <tr key={this.state.id}>
+                                            <td>{this.state.id}</td>
+                                            <td><input value={this.state.name} name="name" onChange={this.onChange} /></td>
+                                            <td><input value={this.state.email} name="email" onChange={this.onChange} /></td>
+                                            <td><input value={this.state.message} name="message" onChange={this.onChange} /></td>
+                                            <td>
+                                                <button
+                                                    onClick={this.save.bind(this)}
+                                                    className="btn btn-primary btn-sm me-2"
+                                                >
+                                                    Save
+                                                </button>
+                                                <button
+                                                    onClick={this.hideForm.bind(this, lead)}
+                                                    className="btn btn-danger btn-sm"
+                                                >
+                                                    X
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        :
+                                        <tr key={lead.id}>
+                                            <td>{lead.id}</td>
+                                            <td>{lead.name}</td>
+                                            <td>{lead.email}</td>
+                                            <td>{lead.message}</td>
+                                            <td>
+                                                <button
+                                                    onClick={this.showForm.bind(this, lead)}
+                                                    className="btn btn-primary btn-sm me-2"
+                                                >
+                                                    Edit
+                                                </button>
+                                                <button
+                                                    onClick={this.props.deleteLead.bind(this, lead.id)}
+                                                    className="btn btn-danger btn-sm"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </Fragment>
 
