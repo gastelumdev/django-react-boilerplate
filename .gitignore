@@ -170,3 +170,5 @@ yarn-error.log*
 .npm/
 
 main.js
+/project/static/
+/project/general.log
