@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-rest-knox = "*"
 redis = "*"
 celery = "*"
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
