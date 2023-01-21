@@ -10,6 +10,7 @@ django-rest-knox = "*"
 redis = "*"
 celery = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 autopep8 = "*"
