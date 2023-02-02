@@ -11,6 +11,7 @@ redis = "*"
 celery = "*"
 whitenoise = "*"
 gunicorn = "*"
+mysqlclient = "*"
 
 [dev-packages]
 autopep8 = "*"

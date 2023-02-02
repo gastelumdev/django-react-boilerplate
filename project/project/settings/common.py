@@ -124,7 +124,7 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 2525
 DEFAULT_FROM_EMAIL = 'omar@collabtime.com'
 
-CELERY_BROKER_URL = 'redis://localhost:6379/1'
+CELERY_BROKER_URL = 'redis://redis:6379/1'
 
 LOGGING = {
     'version': 1,
