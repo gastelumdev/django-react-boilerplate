@@ -1,6 +1,6 @@
 ### INITIAL SETUP TO BUILD FROM SCRATCH
 - Setup Git
-- Install `pipenv`
+- Install `pipenv` with `pip install pipenv`
     - Then run `$ pipenv shell` to start the virtual environment
 - Install packages - `$ pipenv install django djangorestframework django-rest-knox`
 - Create a Django project with `$ django-admin startproject <project-name>`
